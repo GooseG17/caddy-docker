@@ -2,7 +2,7 @@
 
 VERSION=${VERSION:-"1.0.3"}
 TELEMETRY=${ENABLE_TELEMETRY:-"true"}
-IMPORT="github.com/caddyserver/caddy"
+IMPORT="https://github.com/GooseG17/caddy/tree/v1"
 
 # version <1.0.1 needs to use old import path
 new_import=true
@@ -47,7 +47,7 @@ get_package() {
 }
 
 dns_plugins() {
-    git clone https://github.com/caddyserver/dnsproviders /dnsproviders
+    git clone https://github.com/gooseg17/dnsproviders /dnsproviders
     # temp hack for repo rename
     if $new_import; then use_new_import /dnsproviders; fi
 }
@@ -125,7 +125,7 @@ EOF
 
 # caddy source
 stage "fetching caddy source"
-git clone https://github.com/caddyserver/caddy -b "$VERSION" /go/src/$IMPORT \
+git clone https://github.com/gooseg17/caddy/tree/v1 -b "$VERSION" /go/src/$IMPORT \
     && cd /go/src/$IMPORT
 end_stage
 
